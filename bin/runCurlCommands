@@ -1,0 +1,17 @@
+#!/bin/bash
+
+curl -s http://localhost:8080/tooLong/2000 &
+curl -s http://localhost:8080/tooLong/1000 &
+curl -s http://localhost:8080/quick/50 &
+curl -s http://localhost:8080/timeoutEqual/500 &
+curl -s http://localhost:8080/tooLong/2000 &
+curl -s http://localhost:8080/tooooLong/3000 &
+curl -s http://localhost:8080/quick/0 &
+curl -s http://localhost:8080/quick/0 &
+curl -s http://localhost:8080/quick/0 &
+curl -s http://localhost:8080/quick/0 &
+curl -s http://localhost:8080/quick/0 &
+curl -s http://localhost:8080/quick/0 &
+curl -s http://localhost:8080/quick/10 &
+wait
+echo "all commands done"
